@@ -51,6 +51,7 @@ if len(sys.argv) > 1:
     print(f"Received variable: {time_left}")
 else:
     print("No variable received.")
+    time_left = 2700
 
 def countdown(time_left):
     global remaining
@@ -87,17 +88,17 @@ top_canvas2.create_image(0, 0, anchor=tk.NW, image=picture2)
 
 top_canvas3 = tk.Canvas(top_frame, bg=MY_YELLOW, width=screen_width//5, height=screen_height*2//5)
 top_canvas3.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-picture3 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/02a2e1fbd18cf9f593deb03466af34ac/IMG_7541.jpg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8EGDVBG-vnLc5ZfL_2GiKosWMOCkHArMcc8LorETHcZ_-aRbpFRYF3k4iGjKgYDLAefPh3EG-l6u_BKrsea8gqQf1PAyBBoKxDibrzChYISjnMuvTu7Uar2Lnv4P-2Uh-3fi41ayZ3VkF9OJANKrlFBQuyFZX_7a1OGz1k3nWoVw==", screen_width//5, screen_height*2//5)
+picture3 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/02a2e1fbd18cf9f593deb03466af34ac/IMG_7541.jpg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzf8LLUpYs7srmv2ELi9FrYv8qvckilovo84pYEMxUEKOcABIv63UME4pfVMbQtszbgGBMLVaGpWG9LFOP4I-xwRQ-3JwQiAwrzaw085i9LLv1k276gHH8k87HUOHOgk0v8=", screen_width//5, screen_height*2//5)
 top_canvas3.create_image(0, 0, anchor=tk.NW, image=picture3)
 
 top_canvas4 = tk.Canvas(top_frame, bg=MY_YELLOW, width=screen_width//5, height=screen_height*2//5)
 top_canvas4.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-picture4 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/9f858faa075510a603fca73b02cb5036/IMG_7542.jpg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8EGDVBG-vnLc5ZfL_2GiKosWMOCkHArMcc8LorETHcZ0YdSrRPAK29G9uf2vXdTSiENQjb8SB3-mCbVY7ASDMwVZYAWNtpe4CXZF57PSqfHSIsdVfIE24szNoLiXWDXizqAZjlhBPKlnK3RuQ71Gs_U2YBnWxHhbzRnDV8OpWy7g==", screen_width//5, screen_height*2//5)
+picture4 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/9f858faa075510a603fca73b02cb5036/IMG_7542.jpg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzfxNPzey2dY6CC76EftXJ0M6evLT5L1I_AGjy8AKgqnTL6-ediDjxSyS842J54--ntjtPyU7jvc22xBCILJidIW5M-oLpfayVJWxmffo8ENsu-Qv_8y84msi5tXePfBYK8=", screen_width//5, screen_height*2//5)
 top_canvas4.create_image(0, 0, anchor=tk.NW, image=picture4)
 
 top_canvas5 = tk.Canvas(top_frame, bg=MY_YELLOW, width=screen_width//5, height=screen_height*2//5)
 top_canvas5.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-picture5 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/98a1d721339906fc30b2ab3b23c0d286/IMG_7543.jpg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8EGDVBG-vnLc5ZfL_2GiKosWMOCkHArMcc8LorETHcZ0THvUPyBu47TqyvjSjcyH-0ld6uHOGmkylrc9Wcsrv4vSxei-f-LfA-A1M6Jwcq0MZkRieEOH0teoHbrBbqh48vPYr7Pdhyykhanl4pJdz0Inymr15dptdGgGCJIWGJ1g==", screen_width//5, screen_height*2//5)
+picture5 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/98a1d721339906fc30b2ab3b23c0d286/IMG_7543.jpg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzfxNPzey2dY6CC76EftXJ0MxuKYkMuVZ4rlo2eYvtgUm7fVZ_y6J4w4PKQGG-JhZ7H0H64F-RnRpynQuJ0npGl2x9cubTS3VvrU4ZlFcjUAj7gjaWNg3xalikFNNkDQoG0=", screen_width//5, screen_height*2//5)
 top_canvas5.create_image(0, 0, anchor=tk.NW, image=picture5)
 
 # Create a frame for the bottom canvases
@@ -107,27 +108,27 @@ bottom_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 # Manually create bottom canvases
 bottom_canvas1 = tk.Canvas(bottom_frame, bg=MY_YELLOW, width=screen_width//5, height=screen_height*2//5)
 bottom_canvas1.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-picture6 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/91fd0b42f97f50cfdd67c9acbfdeb166/IMG_7544.jpg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8EGDVBG-vnLc5ZfL_2GiKosWMOCkHArMcc8LorETHcZ8MOI37mOwfUlcNnhSCdjb2EynGrbto-EFlAiI53rxoa_OOIu7tKmuQe7cCkGZSHcCxLKCJ1m-5Lk6z7F7GFtp3n10qiWMI1LJL0H3ESYWU2FQYgQLaexgsgCgiF23uqXA==", screen_width//5, screen_height*2//5)
+picture6 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/91fd0b42f97f50cfdd67c9acbfdeb166/IMG_7544.jpg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzfxNPzey2dY6CC76EftXJ0MmKsK3DUNbSe4GB6aGt-jOGXx44VdkE7GP6LvdpsWxfZUOwUKQvoKgUk2eetgrBU6CXUdxGXA9V9RKjKI7oJJQLv901x3Q8GyOI-tX1dga9E=", screen_width//5, screen_height*2//5)
 bottom_canvas1.create_image(0, 0, anchor=tk.NW, image=picture6)
 
 bottom_canvas2 = tk.Canvas(bottom_frame, bg=MY_YELLOW, width=screen_width//5, height=screen_height*2//5)
 bottom_canvas2.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-picture7 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/ab22b62da1b47d81b3df83ed4e0ceb00/IMG_7545.jpg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8EGDVBG-vnLc5ZfL_2GiKosWMOCkHArMcc8LorETHcZ3i_DK-6c8ExXNkSevK6YM6UmNLXkhjFYbnhsvRuR1cHu8SxfLDlJsBZvRTxRwx6-2hiRJh7dxbpCBozw2zGN_e0eFi2Ifv_LDE8k5LtCU3cIOC-uHwuDI4ggE8WUnLCew==", screen_width//5, screen_height*2//5)
+picture7 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/ab22b62da1b47d81b3df83ed4e0ceb00/IMG_7545.jpg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzcttbWblVBcrtjzlrLfyvWfNkn7OtS_6P3_KQYL989CYRyXMMIHoC4fYDBHCodIwiuoTtPogkPg-AWjlNlnn_wpaA_uN3VlWbwOjaiXOodTKmU1U60KZKbfT5SMiCJbqVc=", screen_width//5, screen_height*2//5)
 bottom_canvas2.create_image(0, 0, anchor=tk.NW, image=picture7)
 
 bottom_canvas3 = tk.Canvas(bottom_frame, bg=MY_YELLOW, width=screen_width//5, height=screen_height*2//5)
 bottom_canvas3.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-picture8 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/40d75e58cb2373c90ffffb4ba1178708/IMG_7546.jpg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8EGDVBG-vnLc5ZfL_2GiKosWMOCkHArMcc8LorETHcZ6yDdsb2lZr9c0IVnK-OE4ZLoVFdGDw-gA2Pa_zxk9A_RFRJGPbRIZPnWExiy9RadsNwIn8gD6_6fll5hwxpjzK1EPi8TZKWQiJOfXcxfUiSV-mA1exvccrgpkiHjAoOUw==", screen_width//5, screen_height*2//5)
+picture8 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/40d75e58cb2373c90ffffb4ba1178708/IMG_7546.jpg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzenSVTIzXx48zpMtveqC8NmB6Exh6k0d0B0qyAFA1txb-Kue9VKLM1rVFA6BwCsyC7q153v7UFwVJpnxd-oLDzXPkAONp7-RaYWJ8FxrYpicPDH7DsjnXup8M1vi8DnHWk=", screen_width//5, screen_height*2//5)
 bottom_canvas3.create_image(0, 0, anchor=tk.NW, image=picture8)
 
 bottom_canvas4 = tk.Canvas(bottom_frame, bg=MY_YELLOW, width=screen_width//5, height=screen_height*2//5)
 bottom_canvas4.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-picture9 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/7700645d3167db292bc3fe103be4ec70/IMG_7547.jpg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8EGDVBG-vnLc5ZfL_2GiKosWMOCkHArMcc8LorETHcZ62yDmzLKrAi9_cdoIWWHyaQQUa43yfPug4t4ciPVbYaEQVR_BaqdXxIPE9QlmPvj3-ZXgbH0MchNk7-uqqe-89pC7zxHUC8bH3NM3bi5P3CkQzWe0qVH-b_JSk8zzx-tg==", screen_width//5, screen_height*2//5)
+picture9 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/7700645d3167db292bc3fe103be4ec70/IMG_7547.jpg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzebLajaIv9b92DI7GQgO4RrsugFrFL947Mp1fChD3NtLn5xLsCtNhfy_2yI2_MejDiGBaaA5J6Azd7Tlhk2sJzF9gLUhqvZX5467kfVm5QYJCzPdAG4Gucvk7TUyPlHbXg=", screen_width//5, screen_height*2//5)
 bottom_canvas4.create_image(0, 0, anchor=tk.NW, image=picture9)
 
 bottom_canvas5 = tk.Canvas(bottom_frame, bg=MY_YELLOW, width=screen_width//5, height=screen_height*2//5)
 bottom_canvas5.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-picture10 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/c1dece3848e88581b17b76581c5fceac/IMG_7548.jpg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8EGDVBG-vnLc5ZfL_2GiKosWMOCkHArMcc8LorETHcZ7CG3D7yPd8whmZ8tSgeJijisekf1fHbhxqVkMZ-V4_f1wEvz7cG-BGOSQS39sZTnoLaJQOgPB5iFIlfslhtJ5UDj2mU2y8aP0pCoQhK-IUTMyicJcjbELfLvx68rlXuPQ==", screen_width//5, screen_height*2//5)
+picture10 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/c1dece3848e88581b17b76581c5fceac/IMG_7548.jpg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzcDM9glIFgB6UIAKkBUo76RkZovlM4x6FkuXMbCeS7tlaIxw01OFBOPo1H2dXUa2dXJXeg2_bvWu9ktMH6nV77X5Eyq_kOYeD8dHJ4ERBxurV16hOu9j0Me9gZgMPXu8xo=", screen_width//5, screen_height*2//5)
 bottom_canvas5.create_image(0, 0, anchor=tk.NW, image=picture10)
 
 countdown(time_left)
