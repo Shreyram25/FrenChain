@@ -10,7 +10,7 @@ from random import randint, choice
 
 root = tk.Tk()
 root.title("Catching Game")
-root.geometry("1920x1080")  # Example screen size (800px width, 600px height)
+root.geometry("1920x1080")  
 root.attributes("-fullscreen", True)
 
 screen_width = root.winfo_screenwidth()
@@ -192,7 +192,7 @@ def update_falling_objects():
     if not game_over_flag:
         for obj in falling_objects:
             obj_id, img = obj
-            game_canvas.move(obj_id, 0, 5)  # Move the object down
+            game_canvas.move(obj_id, 0, 5)  
             if game_canvas.coords(obj_id)[1] > screen_height:
                 game_canvas.delete(obj_id)
                 falling_objects.remove(obj)
@@ -213,9 +213,7 @@ def update_falling_objects():
 def goBack():
     messagebox.showinfo("Game Over", "Game Over: You have successfully completed this mission")
     try:
-        # Launch the specified script
         subprocess.Popen([sys.executable, "NextGames.py", str(remaining)])
-        # Exit the current script
         sys.exit()  
     except FileNotFoundError:
         messagebox.showerror("Error", f"File {script_name} not found.")
@@ -223,14 +221,13 @@ def goBack():
 
 
 root.bind("<KeyPress>", move_basket)
-root.after(1000, create_falling_object)  # Start creating falling objects every second
-root.after(1000, update_falling_objects)  # Start updating falling objects
+root.after(1000, create_falling_object)  
+root.after(1000, update_falling_objects) 
 
-# Continuously create falling objects
 def continuous_creation():
     create_falling_object()
-    root.after(1000, continuous_creation)  # Call this function every second
+    root.after(1000, continuous_creation)  
 
-continuous_creation()  # Start the continuous creation of falling objects
-countdown(time_left)  # 60 seconds
+continuous_creation()  
+countdown(time_left)  
 root.mainloop()
