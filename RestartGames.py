@@ -7,20 +7,16 @@ from io import BytesIO
 import subprocess
 import sys
 
-# Constants
 MY_YELLOW = "#FFD500"
 MY_BROWN = "#B27530"
 
-# Create the main window
 root = tk.Tk()
 root.title("Games Page")
 root.attributes("-fullscreen", True)
 
-# Get the screen width and height
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
-# Set the window size to full screen
 root.geometry(f"{screen_width}x{screen_height}")
 allurabig = tkFont.Font(family="Allura", size=48 , weight="bold")
 allurabig2 = tkFont.Font(family="Allura", size=36, weight="bold")
@@ -35,7 +31,7 @@ def on_q_key(event):
 def get_image(url, width, height):
     try:
         response = requests.get(url)
-        response.raise_for_status()  # Raise an error for bad responses
+        response.raise_for_status() 
         img_data = response.content
         img = Image.open(BytesIO(img_data))
         img = img.resize((width, height), Image.LANCZOS)
@@ -46,9 +42,7 @@ def get_image(url, width, height):
 
 def open_script(script_name):
     try:
-        # Launch the specified script
         subprocess.Popen([sys.executable, script_name, str(remaining)])
-        # Exit the current script
         sys.exit()  
     except FileNotFoundError:
         messagebox.showerror("Error", f"File {script_name} not found.")
@@ -93,6 +87,6 @@ catching_image = get_image("https://u1.padletusercontent.com/uploads/padlet-uplo
 catching_button = tk.Button(catching_canvas, command=lambda: open_script("Catching Game.py"), image=catching_image, highlightthickness=0)
 catching_button.pack(side="bottom", fill="x", padx=0, pady=0)
 
-countdown(time_left)  # 10 minutes in seconds
+countdown(time_left)  
 root.bind('<q>', on_q_key) 
 root.mainloop()
