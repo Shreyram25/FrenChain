@@ -7,20 +7,16 @@ from io import BytesIO
 import subprocess
 import sys
 
-# Constants
 MY_YELLOW = "#FFD500"
 MY_BROWN = "#B27530"
 
-# Create the main window
 root = tk.Tk()
 root.title("Break")
 root.attributes("-fullscreen", True)
 
-# Get the screen width and height
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
-# Set the window size to full screen
 root.geometry(f"{screen_width}x{screen_height}")
 allurabig = tkFont.Font(family="Allura", size=48 , weight="bold")
 allurabig2 = tkFont.Font(family="Allura", size=36, weight="bold")
@@ -28,7 +24,7 @@ allurabig2 = tkFont.Font(family="Allura", size=36, weight="bold")
 def get_image(url, width, height):
     try:
         response = requests.get(url)
-        response.raise_for_status()  # Raise an error for bad responses
+        response.raise_for_status() 
         img_data = response.content
         img = Image.open(BytesIO(img_data))
         img = img.resize((width, height), Image.LANCZOS)
@@ -39,15 +35,13 @@ def get_image(url, width, height):
 
 def open_script(script_name):
     try:
-        # Launch the specified script
         subprocess.Popen([sys.executable, script_name, str(2700)])
-        # Exit the current script
         sys.exit()  
     except FileNotFoundError:
         messagebox.showerror("Error", f"File {script_name} not found.")
 
 def startTimer():
-    countdown(600)  # 10 minutes in seconds
+    countdown(600)
 
 def countdown(time_left):
     time_left = int(time_left)
@@ -97,15 +91,12 @@ row2_label2.pack(side="top", fill="both", padx=0, pady=0)
 row2_label3 = tk.Label(row2_canvas1, text="resume!", font=allurabig, bg=MY_YELLOW)
 row2_label3.pack(side="top", fill="both", padx=0, pady=0)
 
-# Adjust the height of the canvas if needed
 row2_canvas2 = tk.Canvas(row2_canvas, width=screen_width//3, height=screen_height//3, bg=MY_YELLOW, highlightthickness=0)
 row2_canvas2.pack(side="left", fill="both", padx=50, pady=0)
 
-# Get the image and resize it to fit the canvas dimensions
 break_image = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/99a7e7714119855278648ef7dc82a4ff/IMG_7066.jpeg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzfxNPzey2dY6CC76EftXJ0MCDX1aOw3V1rqVjThqwbFifgjfMTgINDnYOOqIHnktUrfoYnr2XjTRNg_lt8lqVa6JK2LXgqy-NvtVcc6GEJx5VuY-7M0wcV1SSS8c14oFATKyelPutDtxcFeYyqqE6N2", screen_width//3, screen_height//3)
 
-# Center the image in the canvas
-row2_canvas2.create_image(screen_width//6, screen_height//6, image=break_image, anchor='center')  # Use anchor='center' to center the image
+row2_canvas2.create_image(screen_width//6, screen_height//6, image=break_image, anchor='center')  
 
 row2_canvas3 = tk.Canvas(row2_canvas, width=screen_width//3, height=screen_height//3, bg=MY_YELLOW, highlightthickness=0)
 row2_canvas3.pack(side="left", fill="both", padx=0, pady=0)
@@ -113,7 +104,7 @@ row2_label3 = tk.Label(row2_canvas3, text="Time Left: 10:00", font=allurabig, bg
 row2_label3.pack(side="top", fill="both", padx=0, pady=0)
 resume_image = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/096dc112412b0475736d02ef151ba014/IMG_7535.jpeg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzf8LLUpYs7srmv2ELi9FrYvvkT1aZphbD2tmGdIzjMtqGUExWZU5CTxfi_EayvjJZ13CrTrFgBE_O658xU0ZanZI_K42EW_QycJJD2PWXGg4YKMnR7a-_e8zTa859YbWCsrOJmjTKOUxUxjFe6z9b6o", screen_width//3 -20, screen_height//6)
 resume_button = tk.Button(row2_canvas3, command=lambda: open_script("Home.py"), highlightthickness=0, image=resume_image, width=screen_width//3 -20, height=screen_height//6, state="disabled")
-resume_button.pack(side="top", fill="both", padx=30, pady=0)  # Changed pady from 20 to 0
+resume_button.pack(side="top", fill="both", padx=30, pady=0)  
 
 row3_canvas = tk.Canvas(root, width=screen_width, height=screen_height//3, bg=MY_YELLOW, highlightthickness=0)
 row3_canvas.pack(side="bottom", fill="both", padx=0, pady=0)
