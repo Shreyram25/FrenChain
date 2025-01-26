@@ -7,7 +7,6 @@ from io import BytesIO
 import subprocess
 import sys
 
-# Initialize the main window
 root = tk.Tk()
 root.title("Start")
 root.geometry("1920x1080")
@@ -46,16 +45,14 @@ def open_fullscreen_window():
     root.attributes("-fullscreen", True)
     root.mainloop()
 
-# Define the color variables
 myyellow = "#FFD500"
 mybrown = "#B27530"
 
 screen_height = root.winfo_screenheight()
 screen_width = root.winfo_screenwidth()
 
-# Create font styles
 allurabig = tkFont.Font(family="Allura", size=48, weight="bold")
-button_font = tkFont.Font(family="Helvetica", size=18)  # Define button font
+button_font = tkFont.Font(family="Helvetica", size=18)  
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
@@ -68,7 +65,6 @@ def get_image(url, width, height):
 
 
 
-# Load the main image
 main_url = "https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/acf1cf423d2f579d1bf2a52fa90aad5a/IMG_6999.jpeg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzcttbWblVBcrtjzlrLfyvWfASmvLY8uiiXnM-TM_QHw4C26QJbqF1fpPy2OetH4EEGSv76uFczN2rWs1FjiRuKCSSBgnrQ58QITkb7yRB8mH2dKPpTdySMJJQD01USZLwIXElRoylnQcV-jTCZ0cKU3"
 overlay_url = "https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/633e668c64f6bf13757f0e291c7f01f2/image.png?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOze6pA6LabDCC03MP4Ernxo5anUIQQrGYJUXVE27ttqtdnjyw1b9M9SXjEJyjxgsJMl7yTKeC97neUDH34KPl-02Vqrs3KB3aevxA0VBDCHINZZu2tnV6mBi11xe0uLxZDI="
 
