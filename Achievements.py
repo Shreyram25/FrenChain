@@ -7,20 +7,16 @@ from io import BytesIO
 import subprocess
 import sys
 
-# Constants
 MY_YELLOW = "#FFD500"
 MY_BROWN = "#B27530"
 
-# Create the main window
 root = tk.Tk()
 root.title("Achievements")
 root.attributes("-fullscreen", True)
 
-# Get the screen width and height
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
-# Set the window size to full screen
 root.geometry(f"{screen_width}x{screen_height}")
 allurabig = tkFont.Font(family="Allura", size=48, weight="bold")
 allurabig2 = tkFont.Font(family="Allura", size=36, weight="bold")
@@ -28,7 +24,7 @@ allurabig2 = tkFont.Font(family="Allura", size=36, weight="bold")
 def get_image(url, width, height):
     try:
         response = requests.get(url)
-        response.raise_for_status()  # Raise an error for bad responses
+        response.raise_for_status()  
         img_data = response.content
         img = Image.open(BytesIO(img_data))
         img = img.resize((width, height), Image.LANCZOS)
@@ -39,9 +35,7 @@ def get_image(url, width, height):
 
 def open_script(script_name):
     try:
-        # Launch the specified script
         subprocess.Popen([sys.executable, script_name, str(remaining)])
-        # Exit the current script
         sys.exit()  
     except FileNotFoundError:
         messagebox.showerror("Error", f"File {script_name} not found.")
@@ -71,11 +65,9 @@ back_image = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/
 back_button = tk.Button(heading_canvas, command=lambda: open_script("Home.py"), highlightthickness=0, image = back_image)
 back_button.pack(side="left", fill="x", padx=0, pady=20)
 
-# Create a frame for the top canvases
 top_frame = tk.Frame(root, bg=MY_YELLOW)
 top_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
-# Manually create top canvases
 top_canvas1 = tk.Canvas(top_frame, bg=MY_YELLOW, width=screen_width//5, height=screen_height*2//5)
 top_canvas1.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 picture1 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/24842e8cd400a29975f6de97e688d396/IMG_7539.jpg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzfTObiilaDsI_hq4KXpaBL-ZSiKodKbwJmnio7fX0zrCNxZuzRIIirfH_RnVYhK29WQaUR7TawJ-j6SIE571sCa0rGXQ4XUv9oAm6Q1uNNyyCBzaUeuIcfB1ulFaU5l2yQ=", screen_width//5, screen_height*2//5)
@@ -101,11 +93,9 @@ top_canvas5.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 picture5 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/98a1d721339906fc30b2ab3b23c0d286/IMG_7543.jpg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzfxNPzey2dY6CC76EftXJ0MxuKYkMuVZ4rlo2eYvtgUm7fVZ_y6J4w4PKQGG-JhZ7H0H64F-RnRpynQuJ0npGl2x9cubTS3VvrU4ZlFcjUAj7gjaWNg3xalikFNNkDQoG0=", screen_width//5, screen_height*2//5)
 top_canvas5.create_image(0, 0, anchor=tk.NW, image=picture5)
 
-# Create a frame for the bottom canvases
 bottom_frame = tk.Frame(root, bg=MY_YELLOW)
 bottom_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
-# Manually create bottom canvases
 bottom_canvas1 = tk.Canvas(bottom_frame, bg=MY_YELLOW, width=screen_width//5, height=screen_height*2//5)
 bottom_canvas1.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 picture6 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/91fd0b42f97f50cfdd67c9acbfdeb166/IMG_7544.jpg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzfxNPzey2dY6CC76EftXJ0MmKsK3DUNbSe4GB6aGt-jOGXx44VdkE7GP6LvdpsWxfZUOwUKQvoKgUk2eetgrBU6CXUdxGXA9V9RKjKI7oJJQLv901x3Q8GyOI-tX1dga9E=", screen_width//5, screen_height*2//5)
