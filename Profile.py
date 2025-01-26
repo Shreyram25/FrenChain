@@ -7,7 +7,6 @@ from io import BytesIO
 import subprocess
 import sys
 
-# Constants
 MY_YELLOW = "#FFD500"
 MY_BROWN = "#B27530"
 LOGOUT_URL = "https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/f2b41c0635bfe4f82ca49ac46aeffbcc/Image_03_01_2025_at_1_42_PM.jpeg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzdrfw102NKhCFdQ4eCHKtNvjx71TWvL-MzYri82dNTkARkkAGlyifRFoyKyfbUaxkvStqqG5pBBe7lbneWvN5iojeZ0yjneXS6jzSuAC2I4ug55rzic5ZevwpK7cu4ThgyuP5i0HL-Ct9LqtkuU3K9fjkVn81iH99DTKcrd8QZE3g=="
@@ -19,15 +18,12 @@ LEADERBOARD_URL = "https://u1.padletusercontent.com/uploads/padlet-uploads/77289
 LEADERBOARD_DETAILS_URL = "https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/a59057e81635e0adb1c4542589df6e91/IMG_7525.jpeg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzcttbWblVBcrtjzlrLfyvWfPaQ0SpSDcLSqvfuj4zUB6Lm-ocP078tL2HOMgsmUU_rKF6zprF8UgJXxeJR0S1O6SLaQRsmwZKfHbg8WqURSxsu3OuEac_aAMxxHM-gLe75_jr9haodBv1QJrtQ7OUqN"
 remaining = None
 
-# Create the main window
 root = tk.Tk()
 root.title("Profile")
 root.attributes("-fullscreen", True)
-# Get the screen width and height
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
-# Set the window size to full screen
 root.geometry(f"{screen_width}x{screen_height}")
 allurabig = tkFont.Font(family="Allura", size=48 , weight="bold")
 allurabig2 = tkFont.Font(family="Allura", size=36, weight="bold")
@@ -35,7 +31,7 @@ allurabig2 = tkFont.Font(family="Allura", size=36, weight="bold")
 def get_image(url, width, height):
     try:
         response = requests.get(url)
-        response.raise_for_status()  # Raise an error for bad responses
+        response.raise_for_status()  
         img_data = response.content
         img = Image.open(BytesIO(img_data))
         img = img.resize((width, height), Image.LANCZOS)
@@ -46,18 +42,14 @@ def get_image(url, width, height):
 
 def open_script(script_name, remaining):
     try:
-        # Launch the specified script
         subprocess.Popen([sys.executable, script_name, str(remaining)])
-        # Exit the current script
         sys.exit()  
     except FileNotFoundError:
         messagebox.showerror("Error", f"File {script_name} not found.")
 
 def open_script2(event, script_name, remaining):
     try:
-        # Launch the specified script
         subprocess.Popen([sys.executable, script_name, str(remaining)])
-        # Exit the current script
         sys.exit()  
     except FileNotFoundError:
         messagebox.showerror("Error", f"File {script_name} not found.")
@@ -111,11 +103,9 @@ banner_canvas1.pack(side="left", fill="both", expand=True, padx=20)
 btn.image = profile_image
 btn.pack(side="left", fill="both", expand=True, padx=20)
 
-# Create banner_canvas2 and pack it in the middle
 banner_canvas2 = tk.Canvas(banner_canvas, bg=MY_BROWN, highlightthickness=0)
-banner_canvas2.pack(side="left", fill="both", expand=True, padx = 60)  # Change to "left" to place it in the middle
+banner_canvas2.pack(side="left", fill="both", expand=True, padx = 60)  
 
-# Create details_canvas1, details_canvas2, and details_canvas3 inside banner_canvas2
 details_canvas1 = tk.Canvas(banner_canvas2, bg=MY_BROWN, highlightthickness=0)
 details_canvas1.pack(side="top", fill="both", expand=True)
 label1 = tk.Label(details_canvas1, text="Name: Shreyram Seetharaman", font=allurabig, bg=MY_BROWN, fg="white")
@@ -131,11 +121,8 @@ details_canvas3.pack(side="top", fill="both", expand=True)
 label3 = tk.Label(details_canvas3, text="ID: 12300400127396", font=allurabig, bg=MY_BROWN, fg="white")
 label3.pack(side="top", pady=10)
 
-# Create banner_canvas3 and pack it on the right
-# Load the level3 image
 level3_image = get_image(LEVEL3_URL, (screen_width*1)//5, (screen_height*4)//10)
 
-# Create banner_canvas3 and pack it on the right
 banner_canvas3 = tk.Canvas(banner_canvas, bg=MY_BROWN, highlightthickness=0, width=(screen_width*1)//5, height=(screen_height*4)//10)
 btn = tk.Button(banner_canvas3, bg=MY_BROWN, command=lambda: open_script("CurrentGames.py"), image=level3_image)
 banner_canvas3.pack(side="right", fill="both", expand=True)
