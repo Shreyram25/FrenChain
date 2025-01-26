@@ -7,7 +7,6 @@ import subprocess
 import sys
 from tkinter import messagebox
 
-# Helper function to fetch and resize images
 def get_image(url, width, height):
     response = requests.get(url)
     img_data = response.content
@@ -18,17 +17,14 @@ def get_image(url, width, height):
 myyellow = "#FFD500"
 score = 0
 
-# Root window
 root = tk.Tk()
 root.title("Matching Game")
-root.geometry("1920x1080")  # Example screen size (800px width, 600px height)
+root.geometry("1920x1080") 
 root.attributes("-fullscreen", True)
 
-# Screen proportions
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
-# Dimensions for rows
 row1_height = int(0.2 * screen_height)
 row2_height = int(0.2 * screen_height)
 row3_height = int(0.2 * screen_height)
@@ -36,7 +32,6 @@ row4_height = int(0.4 * screen_height)
 
 allurabig = tkFont.Font(family="Allura", size=48, weight="bold")
 
-# Image URLs (replace these with your URLs)
 image_urls = [
     "https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/c20b38030c6e463438ec0d0cf2195a1a/IMG_7448.jpeg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzcDM9glIFgB6UIAKkBUo76RO8gwb5mejaq5CN-x5_4kf7H_3GW4ZHcn9qukAmi0jfp4pDasj0x8SJRSNIdEeZc06PNph2EH6oylEb49dfdRHKPUAoP5-ZO1FGev8AIxaW0ZJX_AXprwb38pruS_Vcrw",
     "https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/ec50a3a52ee8fed72c86a3c16c2cee43/IMG_7434.jpeg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzd5ipp8wJ0jQxjmOFcT-PFj9I90Dx-GQukF_y0LIin4-9RlADHsQ2TLNeFGkWyOoFEr5rSMK5bQsKxXMVCV6vi-bxwst_LnoQtYlamp-B_vqxrK9ZdZOk3vNYU8esJtlYgOGzAJbTpLJFssNLrEQ510",
@@ -81,9 +76,7 @@ firstwidth = 0
 def goBack():
     messagebox.showinfo("Game Over", "Game Over: You have successfully completed this mission")
     try:
-        # Launch the specified script
         subprocess.Popen([sys.executable, "NextGames.py", str(remaining)])
-        # Exit the current script
         sys.exit()  
     except FileNotFoundError:
         messagebox.showerror("Error", f"File {script_name} not found.")
@@ -94,14 +87,14 @@ def open_fullscreen_window():
     root.mainloop()
 
 def update_button_image(button_index, button_index2, width, height, width2, height2):
-    new_img = get_image(NEW_IMAGE_URL, width2, height2)  # Load the constant image
-    btn = buttons[button_index-2]  # Get the button reference
-    btn.config(image=new_img)  # Update the button's image
-    btn.image = new_img  # Keep a reference to the new image
-    new_img = get_image(NEW_IMAGE_URL, width, height)  # Load the constant image
-    btn2 = buttons[button_index2]  # Get the button reference
-    btn2.config(image=new_img)  # Update the button's image
-    btn2.image = new_img  # Keep a reference to the new image
+    new_img = get_image(NEW_IMAGE_URL, width2, height2)  
+    btn = buttons[button_index-2]  
+    btn.config(image=new_img) 
+    btn.image = new_img  
+    new_img = get_image(NEW_IMAGE_URL, width, height)  
+    btn2 = buttons[button_index2] 
+    btn2.config(image=new_img) 
+    btn2.image = new_img 
 
 
 def get_match(name, urlno, width, height):
@@ -145,7 +138,7 @@ def find_pair(value):
             return key
         elif key == value:
             return val
-    return None  # If no match is found
+    return None  
 
 if len(sys.argv) > 1:
     time_left = sys.argv[1]
@@ -156,9 +149,7 @@ else:
 
 def open_script():
     try:
-        # Launch the specified script
         subprocess.Popen([sys.executable, "Break.py", str(remaining)])
-        # Exit the current script
         sys.exit()  
     except FileNotFoundError:
         messagebox.showerror("Error", f"File {script_name} not found.") 
@@ -175,7 +166,6 @@ def countdown(time_left):
     else:
         open_script()
 
-# Row 1: Single canvas
 parent_canvas = tk.Canvas(root, bg=myyellow, width=screen_width, height=row1_height, highlightthickness=0)
 parent_canvas.pack(fill="x")
 child_canvas1 = tk.Canvas(parent_canvas, bg=myyellow, width=screen_width // 3, height=row1_height, highlightthickness=0)
@@ -194,26 +184,21 @@ child_canvas3.pack(side="left", fill="both", expand=True)
 heading2 = get_image("https://u1.padletusercontent.com/uploads/padlet-uploads/772896347/0867e5d40bb8de5cbd59f26bbd9ea7ff/IMG_7449.jpeg?token=ovZCJ2DsQTTdlrr926tnqto8AUdkuKZ6x6FAMVy6n7-poSxZhGqP1uYapDZt8Es7IMGYQjFrEytvk7pzxUbF0ZlpwL7yxCdvO6iDm5WlOzf8LLUpYs7srmv2ELi9FrYvA7uB9PNdqlYNr_U6i2gvsJJNvMRAqkS0DHvejuzdSiMx3tPpy2s9fMDL9sFJ7INYkwJl6TeeVAZ6-WWeczAgYkN9ty4_I9XCSQhHM5EKwwmBPIwWL1xRekIiOfEQHmFC", screen_width // 4, row1_height//2)
 child_canvas3.create_image(200, row1_height // 4, anchor="nw", image=heading2)
 
-# Row 2: Four canvases
 row2_frame = tk.Frame(root, height=row2_height)
 row2_frame.pack(fill="x")
 canvas2_width = screen_width // 4
 
 for i in range(4):
-    # Create the canvas
     canvas = tk.Canvas(row2_frame, bg=myyellow, width=canvas2_width, height=row2_height, highlightthickness=0)
     canvas.pack(side="left", fill="both", expand=True)
 
-    # Load the initial image
     img = get_image(image_urls[i + 1], canvas2_width, row2_height)
     
-    # Create the button with the image
     btn = tk.Button(canvas, image=img, command=lambda i=i: get_match(Commands[i], i + 1, canvas2_width, row2_height))
-    btn.image = img  # Keep a reference to avoid garbage collection
+    btn.image = img  
     btn.note = i + 1
     btn.pack(fill="both", expand=True)
     
-    # Store the button reference for later use
     buttons.append(btn)
 
 
@@ -227,7 +212,7 @@ for i in range(3):
     canvas.pack(side="left", fill="both", expand=True)
     img = get_image(image_urls[i + 5], canvas3_width, row3_height)
     btn = tk.Button(canvas, image=img, command=lambda i=i: get_match(Commands[i + 4], i+5, canvas3_width, row3_height))
-    btn.image = img  # Keep a reference to avoid garbage collection
+    btn.image = img  
     btn.note = i + 5
     btn.pack(fill="both", expand=True)
     buttons.append(btn)
@@ -261,7 +246,7 @@ for i in range(4):
     inner_canvas.pack(side="left", fill="both", expand=True)
     img = get_image(image_urls[i + 10], int(0.15 * screen_width), int(float(row4_height) // 2.5))
     btn = tk.Button(inner_canvas, image=img, width=int(float(row4_height) // 2.5), height = int(float(row4_height) // 2.5), command=lambda i=i: get_match(Commands[i + 7], i+10, int(0.15*screen_width), int(float(row4_height) // 2.5)))
-    btn.image = img  # Keep a reference to avoid garbage collection
+    btn.image = img  
     btn.note = i + 10
     btn.pack(fill="both", expand=True)
     buttons.append(btn)
@@ -272,7 +257,7 @@ for i in range(3):
     inner_canvas.pack(side="left", fill="both", expand=True)
     img = get_image(image_urls[i + 14], row4_height // 2, row4_height // 2)
     btn = tk.Button(inner_canvas, image=img, width=(row4_height // 2)-8, height=(row4_height // 2)-8, command=lambda i=i: get_match(Commands[i + 11], i+14, row4_height // 2, row4_height // 2))
-    btn.image = img  # Keep a reference to avoid garbage collection
+    btn.image = img  
     btn.note = i + 14
     btn.pack()
     buttons.append(btn)
